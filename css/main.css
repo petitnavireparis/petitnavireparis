@@ -140,10 +140,17 @@ h1 {
 p {
   font-family: 'ITC Souvenir Std';
   font-size: 18px;
+  margin-block-start: 4px;
+  margin-block-end: 4px;
 }
 
 address {
   font-style: normal;
+}
+
+address p {
+  margin-block-start: 4px;
+  margin-block-end: 4px;
 }
 
 a {
@@ -161,8 +168,10 @@ a:hover {
 }
 
 .contain {
-  max-width: 650px;
+  width: 650px;
+  height: 450px;
   position: relative;
+  border: 5px solid #152C49;
 }
 
 .section {
@@ -172,12 +181,13 @@ a:hover {
 
 .logo {
   height: auto;
-  width: 160px;
+  width: 260px;
   margin: 20px 0;
 }
 
 .flag {
   width: 30px;
+  margin-bottom: 24px;
 }
 
 .fab {
@@ -185,23 +195,8 @@ a:hover {
   font-size: 22px;
 }
 
-.menu {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.menu ul {
-  position:relative;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-      -ms-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-}
-
-.menu li {
-  margin-right: 20px;
+.menu li:not(.no-style) {
+  padding: 10px;
 }
 
 .menu a {
@@ -210,15 +205,35 @@ a:hover {
   text-transform: uppercase;
 }
 
-.menu-below li {
-  padding: 10px;
-}
-
-.menu-below a {
+.menu.is-fixed a {
   font-family: 'ITC Souvenir Std';
-  font-size: 18px;
+  font-size: 14px;
   text-transform: uppercase;
 }
+
+
+.menu .logo-sm {
+  visibility: hidden;
+  position: absolute;
+  left: 20px;
+  top: -10px;
+  height: 40px;
+  width: auto;
+}
+
+.menu .logo-x-sm {
+  visibility: hidden;
+  position: absolute;
+  left: 25px;
+  top: 0px;
+  height: 20px;
+  width: auto;
+}
+
+.menu.is-fixed .logo-x-sm {
+  visibility: visible;
+}
+
 
 .is-flexbox-center {
   display: -webkit-box;
@@ -252,18 +267,19 @@ a:hover {
   padding-left: 0;
 }
 
-.no-list-style li{
+.no-list-style li:not(.no-style){
   display: inline;
 }
 
 .txt-s {
-  font-size: 14px;
+  font-size: 18px;
   margin-block-start: 4px;
   margin-block-end: 4px;
 }
 
 .txt-m {
-  font-size: 20px;
+  font-size: 22px;
+  margin-block-start: 8px;
   margin-block-end: 8px;
 }
 
@@ -279,6 +295,9 @@ a:hover {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 4;
+  background-color: rgba(249, 242, 231, 0.7);
+  border-bottom: 1px solid #152C49;
 }
 
 .is-fixed ul {
@@ -288,6 +307,7 @@ a:hover {
       -ms-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
 }
+
 
 
  /* ==========================================================================
@@ -378,6 +398,19 @@ a:hover {
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
+  .menu.is-fixed .logo-sm {
+    visibility: visible;
+  }
+
+  .menu.is-fixed .logo-x-sm {
+    visibility: hidden;
+  }
+
+  .menu.is-fixed a {
+    font-family: 'ITC Souvenir Std';
+    font-size: 18px;
+    text-transform: uppercase;
+  }
     /* Style adjustments for viewports that meet the condition */
 }
 
