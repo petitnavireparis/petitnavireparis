@@ -169,7 +169,7 @@ a:hover {
 
 .contain {
   width: 650px;
-  height: 450px;
+  min-height: 450px;
   position: relative;
   border: 5px solid #152C49;
 }
